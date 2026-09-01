@@ -31,7 +31,7 @@ body{background:#111115;color:#fff;font-family:var(--font);min-height:100vh;over
 nav{position:sticky;top:0;z-index:100;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:rgba(17,17,21,0.92);backdrop-filter:blur(28px) saturate(1.4);border-bottom:1px solid rgba(101,94,168,0.25);box-shadow:0 1px 0 rgba(101,94,168,0.12),0 4px 24px rgba(0,0,0,0.4);}
 .nav-logo{display:flex;align-items:center;gap:7px;text-decoration:none;}
 .nav-logo img{width:20px;height:20px;border-radius:6px;object-fit:cover;}
-.nav-logo-text{font-size:12px;font-weight:700;letter-spacing:-0.02em;color:#fff;}
+.nav-logo-text{font-size:15px;font-weight:700;letter-spacing:0.04em;color:#fff;}
 .nav-logo-text span{background:var(--brand-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .nav-links{display:flex;gap:2px;}
 .nav-link{display:flex;align-items:center;gap:4px;padding:5px 9px;border-radius:7px;font-size:10.5px;font-weight:500;color:var(--text2);text-decoration:none;transition:all .15s;cursor:pointer;background:none;border:none;}
@@ -261,8 +261,8 @@ to{transform:rotate(360deg) translateX(0)}}
 .epoch-recap-icon{width:18px;height:18px;border-radius:50%;background:rgba(47,201,180,0.15);color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;flex-shrink:0;}
 .epoch-recap-text{flex:1;font-size:8.5px;color:var(--text2);line-height:1.5;}
 .epoch-recap-text strong{color:#fff;}
-.epoch-recap-link{background:none;border:none;color:var(--teal);font-size:8.5px;font-weight:700;cursor:pointer;white-space:nowrap;padding:4px 8px;border-radius:6px;transition:background .15s;}
-.epoch-recap-link:hover{background:rgba(47,201,180,0.08);}
+.epoch-recap-link{background:rgba(108,71,255,0.22);border:1px solid rgba(108,71,255,0.4);color:#c4b5fd;font-size:8.5px;font-weight:700;cursor:pointer;white-space:nowrap;padding:6px 12px;border-radius:20px;transition:all .15s;}
+.epoch-recap-link:hover{background:rgba(108,71,255,0.35);color:#fff;}
 .epoch-recap-detail{display:none;margin-top:10px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:10px;padding:10px 12px;}
 .epoch-recap-detail.open{display:block;}
 .epoch-recap-row{display:flex;justify-content:space-between;padding:5px 0;font-size:8.5px;color:var(--text2);}
@@ -494,7 +494,7 @@ body.light-mode #bgCanvas{background:
 <nav>
   <a class="nav-logo" href="#">
     <img class="brand-logo-img" alt="ETHFI"/>
-    <span class="nav-logo-text">ETHFI</span>
+    <span class="nav-logo-text">ETHER.FI</span>
   </a>
   <div class="nav-links">
     <button class="nav-link active">
@@ -534,7 +534,7 @@ body.light-mode #bgCanvas{background:
           <span class="epoch-heading">Epoch 1</span>
           <span class="badge badge-teal">LIVE</span>
         </div>
-        <div class="epoch-sub">Epoch 1 is now live — stake to start earning rewards. Participate early for maximum reward share.</div>
+        <div class="epoch-sub">Epoch 1 is now active — stake to start earning. Rewards accrue every block for participating stakers.</div>
       </div>
     </div>
 
@@ -586,7 +586,15 @@ body.light-mode #bgCanvas{background:
 
     <div class="epoch-recap">
       <div class="epoch-recap-icon">!</div>
-      <div class="epoch-recap-text"><strong>Epoch 1 is live:</strong> Stake now to earn rewards at 56.87% APR · early participants get priority share of the reward pool</div>
+      <div class="epoch-recap-text"><strong>Epoch 1 live:</strong> Reward pool is active · stake now to participate this epoch</div>
+      <button class="epoch-recap-link" onclick="toggleEpochRecap()">View breakdown</button>
+    </div>
+    <div class="epoch-recap-detail" id="epochRecapDetail">
+      <div class="epoch-recap-row"><span>Reward Pool Distributed</span><span>100%</span></div>
+      <div class="epoch-recap-row"><span>Staker Participation Rate</span><span>71.4%</span></div>
+      <div class="epoch-recap-row"><span>Average Realized APR</span><span>38.08%</span></div>
+      <div class="epoch-recap-row"><span>Epoch Duration</span><span>21 Days</span></div>
+      <div class="epoch-recap-row"><span>Top Validator (by stake)</span><span>Operation Solo Staker</span></div>
     </div>
   </div>
 
@@ -997,7 +1005,7 @@ body.light-mode #bgCanvas{background:
 <footer>
   <div class="footer-logo">
     <img class="brand-logo-img" alt="ETHFI"/>
-    <span style="font-size:8px;font-weight:700;letter-spacing:-0.01em;color:#fff;">ETHFI</span>
+    <span style="font-size:11px;font-weight:700;letter-spacing:0.04em;color:#fff;">ETHER.FI</span>
   </div>
   <div class="footer-links">
     <a href="#">Terms</a>
@@ -1646,7 +1654,7 @@ function toggleEpochRecap(){var d=document.getElementById('epochRecapDetail');d.
 
 function initLeaderboard(){
   var list=document.getElementById('leaderboardList'); if(!list) return;
-  var data=[{addr:'0x9F3a...6C21',share:35.2},{addr:'0x1B7e...44Aa',share:24.3},{addr:'0x6D02...F19b',share:18.9},{addr:'0x4C88...2E7d',share:12.2},{addr:'0xA015...9B3c',share:9.4}];
+  var data=[{addr:'0x7C4e...A91f',share:35.2},{addr:'0x2D8b...E3c0',share:24.3},{addr:'0xF15a...8B2d',share:18.9},{addr:'0x9A3c...1E7f',share:12.2},{addr:'0xB6d2...4C9a',share:9.4}];
   var ranks=['gold','silver','bronze','',''];
   var max=data[0].share;
   var h='';
@@ -1738,7 +1746,7 @@ document.addEventListener('DOMContentLoaded',function(){
       <div class="vp-bar"><div class="vp-bar-fill" style="width:5.2%;background:linear-gradient(90deg,#1BBFA8,#3D5FE0);"></div></div>
     </div>
     <div class="vp-description">
-      Operation Solo Staker is a leading proof-of-stake validator and staking infrastructure provider. Operating since 2018, they secure over $3B in assets across 40+ networks with enterprise-grade infrastructure and 24/7 monitoring.
+      Operation Solo Staker is a leading proof-of-stake validator and staking infrastructure provider. Operating since 2023, they secure over $3B in assets across 40+ networks with enterprise-grade infrastructure and 24/7 monitoring.
     </div>
     <div class="vp-tags">
       <span class="vp-tag">Enterprise Grade</span>
