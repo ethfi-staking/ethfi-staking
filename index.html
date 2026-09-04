@@ -396,7 +396,7 @@ html, body, main, .hero, .sbar, .grid, .lp, .rp,
         <div class="apr-bar"><div class="apr-bar-fill" id="aprBarFill"></div></div>
         <div class="apr-mini">
           <div class="am-cell"><div class="am-val">30d</div><div class="am-lbl">Unbonding</div></div>
-          <div class="am-cell"><div class="am-val g">36.8%</div><div class="am-lbl">Compounded</div></div>
+          <div class="am-cell"><div class="am-val g">59.6%</div><div class="am-lbl">Compounded</div></div>
           <div class="am-cell"><div class="am-val">Ep. 1</div><div class="am-lbl">Current</div></div>
         </div>
       </div>
@@ -434,7 +434,7 @@ html, body, main, .hero, .sbar, .grid, .lp, .rp,
       <button class="btnmain" onclick="openStakingModal()">Start Staking</button>
       <button class="btnout" onclick="openUnstakeModal()">Unstake ETHFI</button>
       <div class="togrow">
-        <div><div style="font-size:10px;font-weight:700;color:#fff;margin-bottom:2px;">Auto-Compound</div><div style="font-size:9px;color:var(--t3);">Reinvest daily · 36.8% APR</div></div>
+        <div><div style="font-size:10px;font-weight:700;color:#fff;margin-bottom:2px;">Auto-Compound</div><div style="font-size:9px;color:var(--t3);">Reinvest daily · 59.6% APR</div></div>
         <label class="tog"><input type="checkbox" id="autoComp" onchange="toggleAC()"/><span class="tsl"></span></label>
       </div>
       <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--b1);">
@@ -570,7 +570,7 @@ html, body, main, .hero, .sbar, .grid, .lp, .rp,
     <div class="faq" onclick="toggleFaq(this)"><div class="faqq"><span>What is the APR?</span><span class="faqarr">&#8964;</span></div><div class="faqa">56.87% annually. Rewards accrue every block.</div></div>
     <div class="faq" onclick="toggleFaq(this)"><div class="faqq"><span>Unbonding period?</span><span class="faqarr">&#8964;</span></div><div class="faqa">30 days when you unstake. No rewards during this time.</div></div>
     <div class="faq" onclick="toggleFaq(this)"><div class="faqq"><span>Is my data saved?</span><span class="faqarr">&#8964;</span></div><div class="faqa">Yes, saved locally and restores automatically.</div></div>
-    <div class="faq" onclick="toggleFaq(this)"><div class="faqq"><span>What is Auto-Compound?</span><span class="faqarr">&#8964;</span></div><div class="faqa">Restakes rewards daily, boosting APR to 36.8%.</div></div>
+    <div class="faq" onclick="toggleFaq(this)"><div class="faqq"><span>What is Auto-Compound?</span><span class="faqarr">&#8964;</span></div><div class="faqa">Restakes rewards daily, boosting APR to 59.6%.</div></div>
   </div></div>
 </div>
 <!-- VALIDATOR PANEL -->
@@ -896,7 +896,7 @@ function updateCalc(){
   if(cm)cm.textContent=(a*APR/365*30).toFixed(4);
   if(cy)cy.textContent=(a*APR).toFixed(4);
 }
-function toggleAC(){var on=document.getElementById('autoComp').checked;showToast(on?'Auto-Compound ON':'Auto-Compound OFF',on?'Rewards restaked daily. Est. APR 36.8%.':'Normal accumulation.');}
+function toggleAC(){var on=document.getElementById('autoComp').checked;showToast(on?'Auto-Compound ON':'Auto-Compound OFF',on?'Rewards restaked daily. Est. APR 59.6%.':'Normal accumulation.');}
 function updateAll(){
   if(!stakedAmt||!startTime)return;
   updateEarnings();
